@@ -1,10 +1,10 @@
 ### Introduction
 ![Copyright](https://img.shields.io/badge/Copyright-CVTEAM-red)
 
-This code provides an initial version for the implementation of the CVPR2021 paper "Graph-based High-Order Relation Discovery for Fine-grained Recognition". The projects are still under construction.
+This code provides an initial version for the implementation of the CVPR2021 paper "Graph-based High-Order Relation Discovery for Fine-grained Recognition" [Paper Link](https://openaccess.thecvf.com/content/CVPR2021/papers/Zhao_Graph-Based_High-Order_Relation_Discovery_for_Fine-Grained_Recognition_CVPR_2021_paper.pdf). The projects are still under construction.
 
 For our projects, please refer to http://cvteam.net/projects/2021/Gard/Gard.html
-[Paper Link](https://openaccess.thecvf.com/content/CVPR2021/papers/Zhao_Graph-Based_High-Order_Relation_Discovery_for_Fine-Grained_Recognition_CVPR_2021_paper.pdf)
+
 
 
 ### Using API
