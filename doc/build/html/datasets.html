@@ -1,0 +1,381 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="python" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>datasets package &mdash; Gard-finegrained 0.2 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Gard-finegrained
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">datasets package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-datasets.CUB">datasets.CUB module</a></li>
+<li><a class="reference internal" href="#module-datasets.NAbirds">datasets.NAbirds module</a></li>
+<li><a class="reference internal" href="#module-datasets.UnifiedLoader">datasets.UnifiedLoader module</a></li>
+<li><a class="reference internal" href="#module-datasets.bases">datasets.bases module</a></li>
+<li><a class="reference internal" href="#module-datasets.make_dataloader">datasets.make_dataloader module</a></li>
+<li><a class="reference internal" href="#module-datasets.preprocessing">datasets.preprocessing module</a></li>
+<li><a class="reference internal" href="#module-datasets.sampler">datasets.sampler module</a></li>
+<li><a class="reference internal" href="#module-datasets">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Gard-finegrained</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>datasets package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/datasets.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="datasets-package">
+<h1>datasets package<a class="headerlink" href="#datasets-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-datasets.CUB">
+<span id="datasets-cub-module"></span><h2>datasets.CUB module<a class="headerlink" href="#module-datasets.CUB" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datasets.CUB.CUB">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datasets.CUB.</span></span><span class="sig-name descname"><span class="pre">CUB</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'data_dir'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datasets.CUB.CUB" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#datasets.bases.BaseImageDataset" title="datasets.bases.BaseImageDataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">datasets.bases.BaseImageDataset</span></code></a></p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-datasets.NAbirds">
+<span id="datasets-nabirds-module"></span><h2>datasets.NAbirds module<a class="headerlink" href="#module-datasets.NAbirds" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datasets.NAbirds.NAbirds">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datasets.NAbirds.</span></span><span class="sig-name descname"><span class="pre">NAbirds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'data_dir'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datasets.NAbirds.NAbirds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#datasets.bases.BaseImageDataset" title="datasets.bases.BaseImageDataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">datasets.bases.BaseImageDataset</span></code></a></p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-datasets.UnifiedLoader">
+<span id="datasets-unifiedloader-module"></span><h2>datasets.UnifiedLoader module<a class="headerlink" href="#module-datasets.UnifiedLoader" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datasets.UnifiedLoader.UnifiedLoader">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datasets.UnifiedLoader.</span></span><span class="sig-name descname"><span class="pre">UnifiedLoader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Aircraft'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'data_dir'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datasets.UnifiedLoader.UnifiedLoader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#datasets.bases.BaseImageDataset" title="datasets.bases.BaseImageDataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">datasets.bases.BaseImageDataset</span></code></a></p>
+<p>This must be self set</p>
+<p>can be revised in the next version</p>
+<p>verbose: print additional messages</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-datasets.bases">
+<span id="datasets-bases-module"></span><h2>datasets.bases module<a class="headerlink" href="#module-datasets.bases" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datasets.bases.BaseDataset">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datasets.bases.</span></span><span class="sig-name descname"><span class="pre">BaseDataset</span></span><a class="headerlink" href="#datasets.bases.BaseDataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Base class of reading all dataset</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datasets.bases.BaseDataset.get_imagedata_info">
+<span class="sig-name descname"><span class="pre">get_imagedata_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datasets.bases.BaseDataset.get_imagedata_info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datasets.bases.BaseDataset.get_imagedata_info_discrete">
+<span class="sig-name descname"><span class="pre">get_imagedata_info_discrete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datasets.bases.BaseDataset.get_imagedata_info_discrete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datasets.bases.BaseDataset.print_dataset_statistics">
+<span class="sig-name descname"><span class="pre">print_dataset_statistics</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datasets.bases.BaseDataset.print_dataset_statistics" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="datasets.bases.BaseImageDataset">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datasets.bases.</span></span><span class="sig-name descname"><span class="pre">BaseImageDataset</span></span><a class="headerlink" href="#datasets.bases.BaseImageDataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#datasets.bases.BaseDataset" title="datasets.bases.BaseDataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">datasets.bases.BaseDataset</span></code></a></p>
+<p>Base class of Imagereading dataset</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datasets.bases.BaseImageDataset.print_dataset_statistics">
+<span class="sig-name descname"><span class="pre">print_dataset_statistics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">train</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datasets.bases.BaseImageDataset.print_dataset_statistics" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="datasets.bases.ImageDataset">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datasets.bases.</span></span><span class="sig-name descname"><span class="pre">ImageDataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transform</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datasets.bases.ImageDataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.utils.data.dataset.Dataset</span></code></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datasets.bases.read_image">
+<span class="sig-prename descclassname"><span class="pre">datasets.bases.</span></span><span class="sig-name descname"><span class="pre">read_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datasets.bases.read_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Keep reading image until succeed.
+This can avoid IOError incurred by heavy IO process.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-datasets.make_dataloader">
+<span id="datasets-make-dataloader-module"></span><h2>datasets.make_dataloader module<a class="headerlink" href="#module-datasets.make_dataloader" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="datasets.make_dataloader.make_dataloader">
+<span class="sig-prename descclassname"><span class="pre">datasets.make_dataloader.</span></span><span class="sig-name descname"><span class="pre">make_dataloader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datasets.make_dataloader.make_dataloader" title="Permalink to this definition">¶</a></dt>
+<dd><p># the data augmentation are not carefully modified, other hyper-params may lead to higher performance</p>
+<p>uncomment line for other dataset</p>
+<p>dataset = CUB(data_dir=cfg.DATA_DIR, verbose=True)</p>
+<p>#dataset = UnifiedLoader(dataset_name='Aircraft',data_dir=None,verbose=True)</p>
+<p>#dataset = NAbirds(data_dir='/media/space/ZYF/Dataset/Other/NAbirds/', verbose=True)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datasets.make_dataloader.train_collate_fn">
+<span class="sig-prename descclassname"><span class="pre">datasets.make_dataloader.</span></span><span class="sig-name descname"><span class="pre">train_collate_fn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datasets.make_dataloader.train_collate_fn" title="Permalink to this definition">¶</a></dt>
+<dd><p>collate_fn for training input</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datasets.make_dataloader.val_collate_fn">
+<span class="sig-prename descclassname"><span class="pre">datasets.make_dataloader.</span></span><span class="sig-name descname"><span class="pre">val_collate_fn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datasets.make_dataloader.val_collate_fn" title="Permalink to this definition">¶</a></dt>
+<dd><p>collate_fn for validation input</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-datasets.preprocessing">
+<span id="datasets-preprocessing-module"></span><h2>datasets.preprocessing module<a class="headerlink" href="#module-datasets.preprocessing" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datasets.preprocessing.GaussianMask">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datasets.preprocessing.</span></span><span class="sig-name descname"><span class="pre">GaussianMask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">probability</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datasets.preprocessing.GaussianMask" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="datasets.preprocessing.RandomErasing">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datasets.preprocessing.</span></span><span class="sig-name descname"><span class="pre">RandomErasing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">probability</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mean</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.4914,</span> <span class="pre">0.4822,</span> <span class="pre">0.4465)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datasets.preprocessing.RandomErasing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="simple">
+<dt>Randomly selects a rectangle region in an image and erases its pixels.</dt><dd><p>'Random Erasing Data Augmentation' by Zhong et al.
+See <a class="reference external" href="https://arxiv.org/pdf/1708.04896.pdf">https://arxiv.org/pdf/1708.04896.pdf</a></p>
+</dd>
+<dt>Args:</dt><dd><p>probability: The probability that the Random Erasing operation will be performed.
+sl: Minimum proportion of erased area against input image.
+sh: Maximum proportion of erased area against input image.
+r1: Minimum aspect ratio of erased area.
+mean: Erasing value.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-datasets.sampler">
+<span id="datasets-sampler-module"></span><h2>datasets.sampler module<a class="headerlink" href="#module-datasets.sampler" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datasets.sampler.ClusterIdentitySampler">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datasets.sampler.</span></span><span class="sig-name descname"><span class="pre">ClusterIdentitySampler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_instances</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datasets.sampler.ClusterIdentitySampler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.utils.data.sampler.Sampler</span></code></p>
+<p>Randomly sample N identities, then for each identity,
+randomly sample K instances, therefore batch size is N*K.
+Args:
+- data_source (list): list of (img_path, pid, camid).
+- num_instances (int): number of instances per identity in a batch.
+- batch_size (int): number of examples in a batch.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="datasets.sampler.RandomIdentitySampler">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datasets.sampler.</span></span><span class="sig-name descname"><span class="pre">RandomIdentitySampler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_instances</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datasets.sampler.RandomIdentitySampler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.utils.data.sampler.Sampler</span></code></p>
+<p>Randomly sample N identities, then for each identity,
+randomly sample K instances, therefore batch size is N*K.
+Args:
+- data_source (list): list of (img_path, pid, camid).
+- num_instances (int): number of instances per identity in a batch.
+- batch_size (int): number of examples in a batch.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-datasets">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-datasets" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, CVTEAM.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

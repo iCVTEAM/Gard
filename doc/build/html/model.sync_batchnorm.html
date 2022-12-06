@@ -1,0 +1,544 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="python" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>model.sync_batchnorm package &mdash; Gard-finegrained 0.2 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Gard-finegrained
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">model.sync_batchnorm package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-model.sync_batchnorm.batchnorm">model.sync_batchnorm.batchnorm module</a></li>
+<li><a class="reference internal" href="#module-model.sync_batchnorm.batchnorm_reimpl">model.sync_batchnorm.batchnorm_reimpl module</a></li>
+<li><a class="reference internal" href="#module-model.sync_batchnorm.comm">model.sync_batchnorm.comm module</a></li>
+<li><a class="reference internal" href="#module-model.sync_batchnorm.replicate">model.sync_batchnorm.replicate module</a></li>
+<li><a class="reference internal" href="#module-model.sync_batchnorm.unittest">model.sync_batchnorm.unittest module</a></li>
+<li><a class="reference internal" href="#module-model.sync_batchnorm">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Gard-finegrained</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>model.sync_batchnorm package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/model.sync_batchnorm.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="model-sync-batchnorm-package">
+<h1>model.sync_batchnorm package<a class="headerlink" href="#model-sync-batchnorm-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-model.sync_batchnorm.batchnorm">
+<span id="model-sync-batchnorm-batchnorm-module"></span><h2>model.sync_batchnorm.batchnorm module<a class="headerlink" href="#module-model.sync_batchnorm.batchnorm" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="model.sync_batchnorm.batchnorm.SynchronizedBatchNorm1d">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">model.sync_batchnorm.batchnorm.</span></span><span class="sig-name descname"><span class="pre">SynchronizedBatchNorm1d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">momentum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">affine</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model.sync_batchnorm.batchnorm.SynchronizedBatchNorm1d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">model.sync_batchnorm.batchnorm._SynchronizedBatchNorm</span></code></p>
+<p>Applies Synchronized Batch Normalization over a 2d or 3d input that is seen as a
+mini-batch.</p>
+<div class="math notranslate nohighlight">
+\[y = \frac{x - mean[x]}{ \sqrt{Var[x] + \epsilon}} * gamma + beta\]</div>
+<p>This module differs from the built-in PyTorch BatchNorm1d as the mean and
+standard-deviation are reduced across all devices during training.</p>
+<p>For example, when one uses <cite>nn.DataParallel</cite> to wrap the network during
+training, PyTorch's implementation normalize the tensor on each device using
+the statistics only on that device, which accelerated the computation and
+is also easy to implement, but the statistics might be inaccurate.
+Instead, in this synchronized version, the statistics will be computed
+over all training samples distributed on multiple devices.</p>
+<p>Note that, for one-GPU or CPU-only case, this module behaves exactly same
+as the built-in PyTorch implementation.</p>
+<p>The mean and standard-deviation are calculated per-dimension over
+the mini-batches and gamma and beta are learnable parameter vectors
+of size C (where C is the input size).</p>
+<p>During training, this layer keeps a running estimate of its computed mean
+and variance. The running sum is kept with a default momentum of 0.1.</p>
+<p>During evaluation, this running mean/variance is used for normalization.</p>
+<p>Because the BatchNorm is done over the <cite>C</cite> dimension, computing statistics
+on <cite>(N, L)</cite> slices, it's common terminology to call this Temporal BatchNorm</p>
+<dl>
+<dt>Args:</dt><dd><dl class="simple">
+<dt>num_features: num_features from an expected input of size</dt><dd><p><cite>batch_size x num_features [x width]</cite></p>
+</dd>
+<dt>eps: a value added to the denominator for numerical stability.</dt><dd><p>Default: 1e-5</p>
+</dd>
+<dt>momentum: the value used for the running_mean and running_var</dt><dd><p>computation. Default: 0.1</p>
+</dd>
+<dt>affine: a boolean value that when set to <code class="docutils literal notranslate"><span class="pre">True</span></code>, gives the layer learnable</dt><dd><p>affine parameters. Default: <code class="docutils literal notranslate"><span class="pre">True</span></code></p>
+</dd>
+</dl>
+</dd>
+<dt>Shape:</dt><dd><ul class="simple">
+<li><p>Input: <span class="math notranslate nohighlight">\((N, C)\)</span> or <span class="math notranslate nohighlight">\((N, C, L)\)</span></p></li>
+<li><p>Output: <span class="math notranslate nohighlight">\((N, C)\)</span> or <span class="math notranslate nohighlight">\((N, C, L)\)</span> (same shape as input)</p></li>
+</ul>
+</dd>
+<dt>Examples:</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># With Learnable Parameters</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">SynchronizedBatchNorm1d</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Without Learnable Parameters</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">SynchronizedBatchNorm1d</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">affine</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">input</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">autograd</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">output</span> <span class="o">=</span> <span class="n">m</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="model.sync_batchnorm.batchnorm.SynchronizedBatchNorm2d">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">model.sync_batchnorm.batchnorm.</span></span><span class="sig-name descname"><span class="pre">SynchronizedBatchNorm2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">momentum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">affine</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model.sync_batchnorm.batchnorm.SynchronizedBatchNorm2d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">model.sync_batchnorm.batchnorm._SynchronizedBatchNorm</span></code></p>
+<p>Applies Batch Normalization over a 4d input that is seen as a mini-batch
+of 3d inputs</p>
+<div class="math notranslate nohighlight">
+\[y = \frac{x - mean[x]}{ \sqrt{Var[x] + \epsilon}} * gamma + beta\]</div>
+<p>This module differs from the built-in PyTorch BatchNorm2d as the mean and
+standard-deviation are reduced across all devices during training.</p>
+<p>For example, when one uses <cite>nn.DataParallel</cite> to wrap the network during
+training, PyTorch's implementation normalize the tensor on each device using
+the statistics only on that device, which accelerated the computation and
+is also easy to implement, but the statistics might be inaccurate.
+Instead, in this synchronized version, the statistics will be computed
+over all training samples distributed on multiple devices.</p>
+<p>Note that, for one-GPU or CPU-only case, this module behaves exactly same
+as the built-in PyTorch implementation.</p>
+<p>The mean and standard-deviation are calculated per-dimension over
+the mini-batches and gamma and beta are learnable parameter vectors
+of size C (where C is the input size).</p>
+<p>During training, this layer keeps a running estimate of its computed mean
+and variance. The running sum is kept with a default momentum of 0.1.</p>
+<p>During evaluation, this running mean/variance is used for normalization.</p>
+<p>Because the BatchNorm is done over the <cite>C</cite> dimension, computing statistics
+on <cite>(N, H, W)</cite> slices, it's common terminology to call this Spatial BatchNorm</p>
+<dl>
+<dt>Args:</dt><dd><dl class="simple">
+<dt>num_features: num_features from an expected input of</dt><dd><p>size batch_size x num_features x height x width</p>
+</dd>
+<dt>eps: a value added to the denominator for numerical stability.</dt><dd><p>Default: 1e-5</p>
+</dd>
+<dt>momentum: the value used for the running_mean and running_var</dt><dd><p>computation. Default: 0.1</p>
+</dd>
+<dt>affine: a boolean value that when set to <code class="docutils literal notranslate"><span class="pre">True</span></code>, gives the layer learnable</dt><dd><p>affine parameters. Default: <code class="docutils literal notranslate"><span class="pre">True</span></code></p>
+</dd>
+</dl>
+</dd>
+<dt>Shape:</dt><dd><ul class="simple">
+<li><p>Input: <span class="math notranslate nohighlight">\((N, C, H, W)\)</span></p></li>
+<li><p>Output: <span class="math notranslate nohighlight">\((N, C, H, W)\)</span> (same shape as input)</p></li>
+</ul>
+</dd>
+<dt>Examples:</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># With Learnable Parameters</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">SynchronizedBatchNorm2d</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Without Learnable Parameters</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">SynchronizedBatchNorm2d</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">affine</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">input</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">autograd</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">45</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">output</span> <span class="o">=</span> <span class="n">m</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="model.sync_batchnorm.batchnorm.SynchronizedBatchNorm3d">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">model.sync_batchnorm.batchnorm.</span></span><span class="sig-name descname"><span class="pre">SynchronizedBatchNorm3d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">momentum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">affine</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model.sync_batchnorm.batchnorm.SynchronizedBatchNorm3d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">model.sync_batchnorm.batchnorm._SynchronizedBatchNorm</span></code></p>
+<p>Applies Batch Normalization over a 5d input that is seen as a mini-batch
+of 4d inputs</p>
+<div class="math notranslate nohighlight">
+\[y = \frac{x - mean[x]}{ \sqrt{Var[x] + \epsilon}} * gamma + beta\]</div>
+<p>This module differs from the built-in PyTorch BatchNorm3d as the mean and
+standard-deviation are reduced across all devices during training.</p>
+<p>For example, when one uses <cite>nn.DataParallel</cite> to wrap the network during
+training, PyTorch's implementation normalize the tensor on each device using
+the statistics only on that device, which accelerated the computation and
+is also easy to implement, but the statistics might be inaccurate.
+Instead, in this synchronized version, the statistics will be computed
+over all training samples distributed on multiple devices.</p>
+<p>Note that, for one-GPU or CPU-only case, this module behaves exactly same
+as the built-in PyTorch implementation.</p>
+<p>The mean and standard-deviation are calculated per-dimension over
+the mini-batches and gamma and beta are learnable parameter vectors
+of size C (where C is the input size).</p>
+<p>During training, this layer keeps a running estimate of its computed mean
+and variance. The running sum is kept with a default momentum of 0.1.</p>
+<p>During evaluation, this running mean/variance is used for normalization.</p>
+<p>Because the BatchNorm is done over the <cite>C</cite> dimension, computing statistics
+on <cite>(N, D, H, W)</cite> slices, it's common terminology to call this Volumetric BatchNorm
+or Spatio-temporal BatchNorm</p>
+<dl>
+<dt>Args:</dt><dd><dl class="simple">
+<dt>num_features: num_features from an expected input of</dt><dd><p>size batch_size x num_features x depth x height x width</p>
+</dd>
+<dt>eps: a value added to the denominator for numerical stability.</dt><dd><p>Default: 1e-5</p>
+</dd>
+<dt>momentum: the value used for the running_mean and running_var</dt><dd><p>computation. Default: 0.1</p>
+</dd>
+<dt>affine: a boolean value that when set to <code class="docutils literal notranslate"><span class="pre">True</span></code>, gives the layer learnable</dt><dd><p>affine parameters. Default: <code class="docutils literal notranslate"><span class="pre">True</span></code></p>
+</dd>
+</dl>
+</dd>
+<dt>Shape:</dt><dd><ul class="simple">
+<li><p>Input: <span class="math notranslate nohighlight">\((N, C, D, H, W)\)</span></p></li>
+<li><p>Output: <span class="math notranslate nohighlight">\((N, C, D, H, W)\)</span> (same shape as input)</p></li>
+</ul>
+</dd>
+<dt>Examples:</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># With Learnable Parameters</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">SynchronizedBatchNorm3d</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Without Learnable Parameters</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">SynchronizedBatchNorm3d</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">affine</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">input</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">autograd</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">output</span> <span class="o">=</span> <span class="n">m</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-model.sync_batchnorm.batchnorm_reimpl">
+<span id="model-sync-batchnorm-batchnorm-reimpl-module"></span><h2>model.sync_batchnorm.batchnorm_reimpl module<a class="headerlink" href="#module-model.sync_batchnorm.batchnorm_reimpl" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-model.sync_batchnorm.comm">
+<span id="model-sync-batchnorm-comm-module"></span><h2>model.sync_batchnorm.comm module<a class="headerlink" href="#module-model.sync_batchnorm.comm" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="model.sync_batchnorm.comm.FutureResult">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">model.sync_batchnorm.comm.</span></span><span class="sig-name descname"><span class="pre">FutureResult</span></span><a class="headerlink" href="#model.sync_batchnorm.comm.FutureResult" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A thread-safe future implementation. Used only as one-to-one pipe.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="model.sync_batchnorm.comm.FutureResult.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#model.sync_batchnorm.comm.FutureResult.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="model.sync_batchnorm.comm.FutureResult.put">
+<span class="sig-name descname"><span class="pre">put</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">result</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model.sync_batchnorm.comm.FutureResult.put" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="model.sync_batchnorm.comm.SlavePipe">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">model.sync_batchnorm.comm.</span></span><span class="sig-name descname"><span class="pre">SlavePipe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">identifier</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">queue</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">result</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model.sync_batchnorm.comm.SlavePipe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">model.sync_batchnorm.comm._SlavePipeBase</span></code></p>
+<p>Pipe for master-slave communication.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="model.sync_batchnorm.comm.SlavePipe.run_slave">
+<span class="sig-name descname"><span class="pre">run_slave</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model.sync_batchnorm.comm.SlavePipe.run_slave" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="model.sync_batchnorm.comm.SyncMaster">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">model.sync_batchnorm.comm.</span></span><span class="sig-name descname"><span class="pre">SyncMaster</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">master_callback</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model.sync_batchnorm.comm.SyncMaster" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>An abstract <cite>SyncMaster</cite> object.</p>
+<ul class="simple">
+<li><p>During the replication, as the data parallel will trigger an callback of each module, all slave devices should</p></li>
+</ul>
+<p>call <cite>register(id)</cite> and obtain an <cite>SlavePipe</cite> to communicate with the master.
+- During the forward pass, master device invokes <cite>run_master</cite>, all messages from slave devices will be collected,
+and passed to a registered callback.
+- After receiving the messages, the master device should gather the information and determine to message passed
+back to each slave devices.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="model.sync_batchnorm.comm.SyncMaster.nr_slaves">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">nr_slaves</span></span><a class="headerlink" href="#model.sync_batchnorm.comm.SyncMaster.nr_slaves" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="model.sync_batchnorm.comm.SyncMaster.register_slave">
+<span class="sig-name descname"><span class="pre">register_slave</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">identifier</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model.sync_batchnorm.comm.SyncMaster.register_slave" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register an slave device.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>identifier: an identifier, usually is the device id.</p>
+</dd>
+</dl>
+<p>Returns: a <cite>SlavePipe</cite> object which can be used to communicate with the master device.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="model.sync_batchnorm.comm.SyncMaster.run_master">
+<span class="sig-name descname"><span class="pre">run_master</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">master_msg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model.sync_batchnorm.comm.SyncMaster.run_master" title="Permalink to this definition">¶</a></dt>
+<dd><p>Main entry for the master device in each forward pass.
+The messages were first collected from each devices (including the master device), and then
+an callback will be invoked to compute the message to be sent back to each devices
+(including the master device).</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>master_msg: the message that the master want to send to itself. This will be placed as the first
+message when calling <cite>master_callback</cite>. For detailed usage, see <cite>_SynchronizedBatchNorm</cite> for an example.</p>
+</dd>
+</dl>
+<p>Returns: the message to be sent back to the master device.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-model.sync_batchnorm.replicate">
+<span id="model-sync-batchnorm-replicate-module"></span><h2>model.sync_batchnorm.replicate module<a class="headerlink" href="#module-model.sync_batchnorm.replicate" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="model.sync_batchnorm.replicate.CallbackContext">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">model.sync_batchnorm.replicate.</span></span><span class="sig-name descname"><span class="pre">CallbackContext</span></span><a class="headerlink" href="#model.sync_batchnorm.replicate.CallbackContext" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="model.sync_batchnorm.replicate.DataParallelWithCallback">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">model.sync_batchnorm.replicate.</span></span><span class="sig-name descname"><span class="pre">DataParallelWithCallback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device_ids</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model.sync_batchnorm.replicate.DataParallelWithCallback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.parallel.data_parallel.DataParallel</span></code></p>
+<p>Data Parallel with a replication callback.</p>
+<p>An replication callback <cite>__data_parallel_replicate__</cite> of each module will be invoked after being created by
+original <cite>replicate</cite> function.
+The callback will be invoked with arguments <cite>__data_parallel_replicate__(ctx, copy_id)</cite></p>
+<dl class="simple">
+<dt>Examples:</dt><dd><p>&gt; sync_bn = SynchronizedBatchNorm1d(10, eps=1e-5, affine=False)
+&gt; sync_bn = DataParallelWithCallback(sync_bn, device_ids=[0, 1])
+# sync_bn.__data_parallel_replicate__ will be invoked.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="model.sync_batchnorm.replicate.DataParallelWithCallback.replicate">
+<span class="sig-name descname"><span class="pre">replicate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device_ids</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model.sync_batchnorm.replicate.DataParallelWithCallback.replicate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="model.sync_batchnorm.replicate.execute_replication_callbacks">
+<span class="sig-prename descclassname"><span class="pre">model.sync_batchnorm.replicate.</span></span><span class="sig-name descname"><span class="pre">execute_replication_callbacks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">modules</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model.sync_batchnorm.replicate.execute_replication_callbacks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Execute an replication callback <cite>__data_parallel_replicate__</cite> on each module created by original replication.</p>
+<p>The callback will be invoked with arguments <cite>__data_parallel_replicate__(ctx, copy_id)</cite></p>
+<p>Note that, as all modules are isomorphism, we assign each sub-module with a context
+(shared among multiple copies of this module on different devices).
+Through this context, different copies can share some information.</p>
+<p>We guarantee that the callback on the master copy (the first copy) will be called ahead of calling the callback
+of any slave copies.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="model.sync_batchnorm.replicate.patch_replication_callback">
+<span class="sig-prename descclassname"><span class="pre">model.sync_batchnorm.replicate.</span></span><span class="sig-name descname"><span class="pre">patch_replication_callback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_parallel</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model.sync_batchnorm.replicate.patch_replication_callback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Monkey-patch an existing <cite>DataParallel</cite> object. Add the replication callback.
+Useful when you have customized <cite>DataParallel</cite> implementation.</p>
+<dl class="simple">
+<dt>Examples:</dt><dd><p>&gt; sync_bn = SynchronizedBatchNorm1d(10, eps=1e-5, affine=False)
+&gt; sync_bn = DataParallel(sync_bn, device_ids=[0, 1])
+&gt; patch_replication_callback(sync_bn)
+# this is equivalent to
+&gt; sync_bn = SynchronizedBatchNorm1d(10, eps=1e-5, affine=False)
+&gt; sync_bn = DataParallelWithCallback(sync_bn, device_ids=[0, 1])</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-model.sync_batchnorm.unittest">
+<span id="model-sync-batchnorm-unittest-module"></span><h2>model.sync_batchnorm.unittest module<a class="headerlink" href="#module-model.sync_batchnorm.unittest" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="model.sync_batchnorm.unittest.TorchTestCase">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">model.sync_batchnorm.unittest.</span></span><span class="sig-name descname"><span class="pre">TorchTestCase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model.sync_batchnorm.unittest.TorchTestCase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">unittest.case.TestCase</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="model.sync_batchnorm.unittest.TorchTestCase.assertTensorClose">
+<span class="sig-name descname"><span class="pre">assertTensorClose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model.sync_batchnorm.unittest.TorchTestCase.assertTensorClose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-model.sync_batchnorm">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-model.sync_batchnorm" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, CVTEAM.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

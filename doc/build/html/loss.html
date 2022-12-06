@@ -1,0 +1,435 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="python" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>loss package &mdash; Gard-finegrained 0.2 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Gard-finegrained
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">loss package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-loss.arcface">loss.arcface module</a></li>
+<li><a class="reference internal" href="#module-loss.center_loss">loss.center_loss module</a></li>
+<li><a class="reference internal" href="#module-loss.link_loss">loss.link_loss module</a></li>
+<li><a class="reference internal" href="#module-loss.make_loss">loss.make_loss module</a></li>
+<li><a class="reference internal" href="#module-loss.softmax_loss">loss.softmax_loss module</a></li>
+<li><a class="reference internal" href="#module-loss.triplet_loss">loss.triplet_loss module</a></li>
+<li><a class="reference internal" href="#module-loss">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Gard-finegrained</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>loss package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/loss.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="loss-package">
+<h1>loss package<a class="headerlink" href="#loss-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-loss.arcface">
+<span id="loss-arcface-module"></span><h2>loss.arcface module<a class="headerlink" href="#module-loss.arcface" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="loss.arcface.ArcFace">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">loss.arcface.</span></span><span class="sig-name descname"><span class="pre">ArcFace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">in_features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bias</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#loss.arcface.ArcFace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.modules.module.Module</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="loss.arcface.ArcFace.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#loss.arcface.ArcFace.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="loss.arcface.ArcFace.reset_parameters">
+<span class="sig-name descname"><span class="pre">reset_parameters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#loss.arcface.ArcFace.reset_parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-loss.center_loss">
+<span id="loss-center-loss-module"></span><h2>loss.center_loss module<a class="headerlink" href="#module-loss.center_loss" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="loss.center_loss.CenterLoss">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">loss.center_loss.</span></span><span class="sig-name descname"><span class="pre">CenterLoss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">751</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feat_dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2048</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_gpu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#loss.center_loss.CenterLoss" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.modules.module.Module</span></code></p>
+<p>Center loss.</p>
+<p>Reference:
+Wen et al. A Discriminative Feature Learning Approach for Deep Face Recognition. ECCV 2016.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>num_classes (int): number of classes.
+feat_dim (int): feature dimension.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="loss.center_loss.CenterLoss.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#loss.center_loss.CenterLoss.forward" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><p>x: feature matrix with shape (batch_size, feat_dim).
+labels: ground truth labels with shape (num_classes).</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-loss.link_loss">
+<span id="loss-link-loss-module"></span><h2>loss.link_loss module<a class="headerlink" href="#module-loss.link_loss" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="loss.link_loss.loss_aux">
+<span class="sig-prename descclassname"><span class="pre">loss.link_loss.</span></span><span class="sig-name descname"><span class="pre">loss_aux</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f_pool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">adj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#loss.link_loss.loss_aux" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="loss.link_loss.loss_normf">
+<span class="sig-prename descclassname"><span class="pre">loss.link_loss.</span></span><span class="sig-name descname"><span class="pre">loss_normf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#loss.link_loss.loss_normf" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-loss.make_loss">
+<span id="loss-make-loss-module"></span><h2>loss.make_loss module<a class="headerlink" href="#module-loss.make_loss" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="loss.make_loss.make_loss">
+<span class="sig-prename descclassname"><span class="pre">loss.make_loss.</span></span><span class="sig-name descname"><span class="pre">make_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_classes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#loss.make_loss.make_loss" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-loss.softmax_loss">
+<span id="loss-softmax-loss-module"></span><h2>loss.softmax_loss module<a class="headerlink" href="#module-loss.softmax_loss" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="loss.softmax_loss.CrossEntropyLabelSmooth">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">loss.softmax_loss.</span></span><span class="sig-name descname"><span class="pre">CrossEntropyLabelSmooth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_classes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_gpu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#loss.softmax_loss.CrossEntropyLabelSmooth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.modules.module.Module</span></code></p>
+<p>Cross entropy loss with label smoothing regularizer.</p>
+<p>Reference:
+Szegedy et al. Rethinking the Inception Architecture for Computer Vision. CVPR 2016.
+Equation: y = (1 - epsilon) * y + epsilon / K.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>num_classes (int): number of classes.
+epsilon (float): weight.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="loss.softmax_loss.CrossEntropyLabelSmooth.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targets</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#loss.softmax_loss.CrossEntropyLabelSmooth.forward" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><p>inputs: prediction matrix (before softmax) with shape (batch_size, num_classes)
+targets: ground truth labels with shape (num_classes)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="loss.softmax_loss.CrossEntropyLabelSmooth2d">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">loss.softmax_loss.</span></span><span class="sig-name descname"><span class="pre">CrossEntropyLabelSmooth2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_classes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_gpu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#loss.softmax_loss.CrossEntropyLabelSmooth2d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.modules.module.Module</span></code></p>
+<p>Cross entropy loss with label smoothing regularizer.</p>
+<p>Reference:
+Szegedy et al. Rethinking the Inception Architecture for Computer Vision. CVPR 2016.
+Equation: y = (1 - epsilon) * y + epsilon / K.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>num_classes (int): number of classes.
+epsilon (float): weight.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="loss.softmax_loss.CrossEntropyLabelSmooth2d.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targets</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#loss.softmax_loss.CrossEntropyLabelSmooth2d.forward" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><p>inputs: prediction matrix (before softmax) with shape (batch_size, num_classes,w,h)
+targets: ground truth labels with shape (num_classes)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="loss.softmax_loss.LabelSmoothSoftmaxCE">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">loss.softmax_loss.</span></span><span class="sig-name descname"><span class="pre">LabelSmoothSoftmaxCE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lb_pos</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lb_neg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.005</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reduction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'mean'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lb_ignore</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">255</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#loss.softmax_loss.LabelSmoothSoftmaxCE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.modules.module.Module</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="loss.softmax_loss.LabelSmoothSoftmaxCE.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#loss.softmax_loss.LabelSmoothSoftmaxCE.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-loss.triplet_loss">
+<span id="loss-triplet-loss-module"></span><h2>loss.triplet_loss module<a class="headerlink" href="#module-loss.triplet_loss" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="loss.triplet_loss.TripletLoss">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">loss.triplet_loss.</span></span><span class="sig-name descname"><span class="pre">TripletLoss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">margin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hard_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#loss.triplet_loss.TripletLoss" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Triplet loss using HARDER example mining,
+modified based on original triplet loss using hard example mining</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="loss.triplet_loss.euclidean_dist">
+<span class="sig-prename descclassname"><span class="pre">loss.triplet_loss.</span></span><span class="sig-name descname"><span class="pre">euclidean_dist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#loss.triplet_loss.euclidean_dist" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><p>x: pytorch Variable, with shape [m, d]
+y: pytorch Variable, with shape [n, d]</p>
+</dd>
+<dt>Returns:</dt><dd><p>dist: pytorch Variable, with shape [m, n]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="loss.triplet_loss.hard_example_mining">
+<span class="sig-prename descclassname"><span class="pre">loss.triplet_loss.</span></span><span class="sig-name descname"><span class="pre">hard_example_mining</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dist_mat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_inds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#loss.triplet_loss.hard_example_mining" title="Permalink to this definition">¶</a></dt>
+<dd><p>For each anchor, find the hardest positive and negative sample.
+Args:</p>
+<blockquote>
+<div><p>dist_mat: pytorch Variable, pair wise distance between samples, shape [N, N]
+labels: pytorch LongTensor, with shape [N]
+return_inds: whether to return the indices. Save time if <a href="#id1"><span class="problematic" id="id2">`</span></a>False`(?)</p>
+</div></blockquote>
+<dl>
+<dt>Returns:</dt><dd><p>dist_ap: pytorch Variable, distance(anchor, positive); shape [N]
+dist_an: pytorch Variable, distance(anchor, negative); shape [N]
+p_inds: pytorch LongTensor, with shape [N];</p>
+<blockquote>
+<div><p>indices of selected hard positive samples; 0 &lt;= p_inds[i] &lt;= N - 1</p>
+</div></blockquote>
+<dl class="simple">
+<dt>n_inds: pytorch LongTensor, with shape [N];</dt><dd><p>indices of selected hard negative samples; 0 &lt;= n_inds[i] &lt;= N - 1</p>
+</dd>
+</dl>
+</dd>
+<dt>NOTE: Only consider the case in which all labels have same num of samples,</dt><dd><p>thus we can cope with all anchors in parallel.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="loss.triplet_loss.normalize">
+<span class="sig-prename descclassname"><span class="pre">loss.triplet_loss.</span></span><span class="sig-name descname"><span class="pre">normalize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#loss.triplet_loss.normalize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Normalizing to unit length along the specified dimension.
+Args:</p>
+<blockquote>
+<div><p>x: pytorch Variable</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>x: pytorch Variable, same shape as input</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-loss">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-loss" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, CVTEAM.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

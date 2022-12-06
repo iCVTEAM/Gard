@@ -1,0 +1,443 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="python" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>utils package &mdash; Gard-finegrained 0.2 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Gard-finegrained
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">utils package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-utils.adj_matrix">utils.adj_matrix module</a></li>
+<li><a class="reference internal" href="#module-utils.logger">utils.logger module</a></li>
+<li><a class="reference internal" href="#module-utils.meter">utils.meter module</a></li>
+<li><a class="reference internal" href="#module-utils.metrics">utils.metrics module</a></li>
+<li><a class="reference internal" href="#module-utils.reranking">utils.reranking module</a></li>
+<li><a class="reference internal" href="#module-utils">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Gard-finegrained</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>utils package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/utils.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="utils-package">
+<h1>utils package<a class="headerlink" href="#utils-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-utils.adj_matrix">
+<span id="utils-adj-matrix-module"></span><h2>utils.adj_matrix module<a class="headerlink" href="#module-utils.adj_matrix" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.adj_matrix.Norm_F">
+<span class="sig-prename descclassname"><span class="pre">utils.adj_matrix.</span></span><span class="sig-name descname"><span class="pre">Norm_F</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm_flag</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.adj_matrix.Norm_F" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><p>feature: features to be normalized, (b,c,1,n)
+norm_flag: normalization flag: constant, l1norm, l2norm</p>
+</dd>
+<dt>Returns:</dt><dd><p>normalized feature in the third dimension  size: (b,c,1,n)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.adj_matrix.build_idx">
+<span class="sig-prename descclassname"><span class="pre">utils.adj_matrix.</span></span><span class="sig-name descname"><span class="pre">build_idx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.adj_matrix.build_idx" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><p>num: number of graph nodes</p>
+</dd>
+<dt>Returns:</dt><dd><p>indices of each nodes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.adj_matrix.buildnear">
+<span class="sig-prename descclassname"><span class="pre">utils.adj_matrix.</span></span><span class="sig-name descname"><span class="pre">buildnear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">j</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">len</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.adj_matrix.buildnear" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.adj_matrix.gen_adj">
+<span class="sig-prename descclassname"><span class="pre">utils.adj_matrix.</span></span><span class="sig-name descname"><span class="pre">gen_adj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block_width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.adj_matrix.gen_adj" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><p>block_width: feature size width/height used for spatial GCN
+batch: batchsize</p>
+</dd>
+<dt>Returns:</dt><dd><p>adj matrices</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.adj_matrix.gen_adj2">
+<span class="sig-prename descclassname"><span class="pre">utils.adj_matrix.</span></span><span class="sig-name descname"><span class="pre">gen_adj2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_block</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.adj_matrix.gen_adj2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.adj_matrix.gen_adj_coo">
+<span class="sig-prename descclassname"><span class="pre">utils.adj_matrix.</span></span><span class="sig-name descname"><span class="pre">gen_adj_coo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block_width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.adj_matrix.gen_adj_coo" title="Permalink to this definition">¶</a></dt>
+<dd><p>generate adjacent matrices by COO form</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.adj_matrix.gen_adj_nearst">
+<span class="sig-prename descclassname"><span class="pre">utils.adj_matrix.</span></span><span class="sig-name descname"><span class="pre">gen_adj_nearst</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_block</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">part_features</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.adj_matrix.gen_adj_nearst" title="Permalink to this definition">¶</a></dt>
+<dd><p>enable nearst connections for the graph embedding
+Args:</p>
+<blockquote>
+<div><p>num_block:
+part_features:</p>
+</div></blockquote>
+<p>Returns:</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.adj_matrix.gen_adj_sim">
+<span class="sig-prename descclassname"><span class="pre">utils.adj_matrix.</span></span><span class="sig-name descname"><span class="pre">gen_adj_sim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_block</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">part_features1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">part_features2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enable_mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.adj_matrix.gen_adj_sim" title="Permalink to this definition">¶</a></dt>
+<dd><p>default similarity function, calculate similarity between two input features</p>
+<p>enable_mask: encourage sparse connections when similarities higher than the threshold</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>num_block: abandoned feature
+part_features1: vector1, size = b,c,n1
+part_features2: vector2, size = b,c,n2
+enable_mask: True/ False</p>
+</dd>
+<dt>Returns:</dt><dd><p>similarity matrices: size: n1 * n2</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.adj_matrix.gen_adj_sim_old">
+<span class="sig-prename descclassname"><span class="pre">utils.adj_matrix.</span></span><span class="sig-name descname"><span class="pre">gen_adj_sim_old</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_block</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">part_features</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.adj_matrix.gen_adj_sim_old" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.adj_matrix.gen_adj_topk">
+<span class="sig-prename descclassname"><span class="pre">utils.adj_matrix.</span></span><span class="sig-name descname"><span class="pre">gen_adj_topk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_block</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">part_features</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.adj_matrix.gen_adj_topk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.adj_matrix.get_sim_cross">
+<span class="sig-prename descclassname"><span class="pre">utils.adj_matrix.</span></span><span class="sig-name descname"><span class="pre">get_sim_cross</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">edge</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.adj_matrix.get_sim_cross" title="Permalink to this definition">¶</a></dt>
+<dd><p>handcrafted similarity matrices</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>edge:</p>
+</dd>
+</dl>
+<p>Returns:</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.adj_matrix.get_sim_cross2">
+<span class="sig-prename descclassname"><span class="pre">utils.adj_matrix.</span></span><span class="sig-name descname"><span class="pre">get_sim_cross2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">edge</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.adj_matrix.get_sim_cross2" title="Permalink to this definition">¶</a></dt>
+<dd><p>handcrafted similarity matrices</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.adj_matrix.get_sim_local">
+<span class="sig-prename descclassname"><span class="pre">utils.adj_matrix.</span></span><span class="sig-name descname"><span class="pre">get_sim_local</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">edge1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.adj_matrix.get_sim_local" title="Permalink to this definition">¶</a></dt>
+<dd><p>get local connections
+Args:</p>
+<blockquote>
+<div><p>edge1:
+edge2:</p>
+</div></blockquote>
+<p>Returns:</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.adj_matrix.mul_dis">
+<span class="sig-prename descclassname"><span class="pre">utils.adj_matrix.</span></span><span class="sig-name descname"><span class="pre">mul_dis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.adj_matrix.mul_dis" title="Permalink to this definition">¶</a></dt>
+<dd><p>matmul similarity function</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.adj_matrix.sim_dis">
+<span class="sig-prename descclassname"><span class="pre">utils.adj_matrix.</span></span><span class="sig-name descname"><span class="pre">sim_dis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.adj_matrix.sim_dis" title="Permalink to this definition">¶</a></dt>
+<dd><p>cosine simlarity function</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-utils.logger">
+<span id="utils-logger-module"></span><h2>utils.logger module<a class="headerlink" href="#module-utils.logger" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.logger.label2colormap">
+<span class="sig-prename descclassname"><span class="pre">utils.logger.</span></span><span class="sig-name descname"><span class="pre">label2colormap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.logger.label2colormap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.logger.setup_logger">
+<span class="sig-prename descclassname"><span class="pre">utils.logger.</span></span><span class="sig-name descname"><span class="pre">setup_logger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_dir</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.logger.setup_logger" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-utils.meter">
+<span id="utils-meter-module"></span><h2>utils.meter module<a class="headerlink" href="#module-utils.meter" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="utils.meter.AverageMeter">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">utils.meter.</span></span><span class="sig-name descname"><span class="pre">AverageMeter</span></span><a class="headerlink" href="#utils.meter.AverageMeter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Computes and stores the average and current value</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.meter.AverageMeter.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils.meter.AverageMeter.reset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.meter.AverageMeter.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.meter.AverageMeter.update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-utils.metrics">
+<span id="utils-metrics-module"></span><h2>utils.metrics module<a class="headerlink" href="#module-utils.metrics" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="utils.metrics.R1_mAP">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">utils.metrics.</span></span><span class="sig-name descname"><span class="pre">R1_mAP</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_rank</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feat_norm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'euclidean'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reranking</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.metrics.R1_mAP" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.metrics.R1_mAP.compute">
+<span class="sig-name descname"><span class="pre">compute</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils.metrics.R1_mAP.compute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.metrics.R1_mAP.compute_acc">
+<span class="sig-name descname"><span class="pre">compute_acc</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils.metrics.R1_mAP.compute_acc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.metrics.R1_mAP.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils.metrics.R1_mAP.reset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.metrics.R1_mAP.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.metrics.R1_mAP.update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.metrics.cosine_similarity">
+<span class="sig-prename descclassname"><span class="pre">utils.metrics.</span></span><span class="sig-name descname"><span class="pre">cosine_similarity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">qf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gf</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.metrics.cosine_similarity" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.metrics.euclidean_distance">
+<span class="sig-prename descclassname"><span class="pre">utils.metrics.</span></span><span class="sig-name descname"><span class="pre">euclidean_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">qf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gf</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.metrics.euclidean_distance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.metrics.eval_func">
+<span class="sig-prename descclassname"><span class="pre">utils.metrics.</span></span><span class="sig-name descname"><span class="pre">eval_func</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">distmat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q_pids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g_pids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_rank</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.metrics.eval_func" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluation with market1501 metric
+Key: for each query identity, its gallery images from the same camera view are discarded.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-utils.reranking">
+<span id="utils-reranking-module"></span><h2>utils.reranking module<a class="headerlink" href="#module-utils.reranking" title="Permalink to this headline">¶</a></h2>
+<p>Created on Fri, 25 May 2018 20:29:09</p>
+<p>&#64;author: luohao</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.reranking.re_ranking">
+<span class="sig-prename descclassname"><span class="pre">utils.reranking.</span></span><span class="sig-name descname"><span class="pre">re_ranking</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">probFea</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">galFea</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambda_value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local_distmat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only_local</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.reranking.re_ranking" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-utils">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-utils" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, CVTEAM.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
