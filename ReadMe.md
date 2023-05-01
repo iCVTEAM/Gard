@@ -90,10 +90,11 @@ The performance would be fluctuated by 0.1~0.5% in different GPUs and PyTorch pl
 Please remember to cite us if u find this useful.
 ```
 @inproceedings{zhao2021graph,
-  title={Graph-based High-Order Relation Discovery for Fine-grained Recognition},
-  author={Zhao, Yifan and Yan, Ke and Huang, Feiyue and Jia, Li},
-  booktitle={IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
-  year={2021},
+  title={Graph-based high-order relation discovery for fine-grained recognition},
+  author={Zhao, Yifan and Yan, Ke and Huang, Feiyue and Li, Jia},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={15079--15088},
+  year={2021}
 }
 ```
 
