@@ -1,3 +1,4 @@
+#designed for image retrieval tasks, for fine-grained classification tasks, we do not need to use this manuscript.
 import os
 import sys
 from config import Config
